@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:kurs_valyuta/const.dart';
 import 'package:kurs_valyuta/screens/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'connectivity_provider.dart';
 
-void main() {
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  );
+
   runApp(const MyApp());
 }
 
